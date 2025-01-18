@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- SEO -->
+  <meta name="description" content="Turma Militar de Inglês para Concursos Militares. 25 aulas ao vivo, apostila completa, exercícios específicos e método ACE para ESA, EsPCEX, AFA, EEAR, EPCAR e mais."/>
+  <meta name="keywords" content="Inglês, Concursos Militares, ESA, EsPCEX, AFA, EEAR, EPCAR, Polícia Militar, EFOMM, Método ACE, Apostila, Exercícios"/>
+  <meta name="author" content="Teacher Natália Campos"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="./images/favicon.png" type="image/png" />
+
+  <title>Turma Militar - Inglês para Concursos Militares</title>
+
+  <!-- =======================
+       CSS E FRAMEWORKS
+  ======================= -->
+  <!-- Bootstrap 5 -->
+  <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <!-- Animate.css -->
+  <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"
+  />
+  <!-- AOS (Animate On Scroll) -->
+  <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+  />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <!-- Google Fonts -->
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Staatliches&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* RESET & BASE */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #000; /* Fundo preto */
+      color: #fff;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Staatliches', sans-serif; /* Títulos estilo militar */
+      letter-spacing: 1px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+
+    /* NAVBAR TRANSPARENTE COM CONTORNO BRANCO */
+    .navbar {
+      background: none !important;  /* Sem cor de fundo */
+      border-bottom: 1px solid #fff; /* Fino contorno branco apenas na parte de baixo */
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      transition: background-color 0.3s ease;
+      z-index: 99;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .navbar-brand img {
+      width: 200px; 
+      height: 60px;
+      object-fit: contain;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 700;
+    }
+    .navbar-toggler {
+      border: 1px solid #fff;
+    }
+    .navbar-toggler-icon {
+      background-image: none;
+    }
+    .navbar-toggler-icon::before {
+      content: "\f0c9"; /* fa-bars */
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      color: #fff;
+    }
+
+    /* HERO (TEXTOS CENTRALIZADOS) */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      background: url('./images/hero-bg.jpg') center center no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      color: #eee;
+    }
+    .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+    }
+    .hero-bullets li {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 10px 0.5rem 10px;
+      font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .hero-bullets li:hover {
+      transform: scale(1.05);
+    }
+    .hero-bullets li i {
+      margin-right: 5px;
+      color: #0d6b2f;
+    }
+
+    /* BOTÃO */
+    .btn-custom-green {
+      background-color: #0d6b2f;
+      border: none;
+      color: #fff;
+      font-family: 'Staatliches', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .btn-custom-green:hover {
+      background-color: #0b5a28;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    /* SEÇÕES PADRÃO */
+    section {
+      padding: 60px 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      color: #0d6b2f;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section-subtitle {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    /* A SUA APROVAÇÃO COMEÇA AGORA (FUNDO VERDE) */
+    .approval-section {
+      background-color: #0d6b2f;
+      padding: 60px 20px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .approval-section h2 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .approval-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .approval-box {
+      background-color: rgba(255,255,255,0.08);
+      border: 1px solid #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+      min-height: 280px; 
+      flex: 1 1 calc(33.333% - 1rem);
+    }
+    @media (max-width: 768px) {
+      .approval-box {
+        flex: 1 1 100%;
+      }
+    }
+    .approval-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.5);
+    }
+    .approval-box h5 {
+      font-family: 'Staatliches', sans-serif;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    .approval-box p {
+      font-size: 0.95rem;
+      color: #fff;
+    }
+    .approval-icon {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    /* ACE SECTION (fundo branco) */
+    .ace-section {
+      background-color: #fff;
+      color: #2c2c2c;
+    }
+    .ace-box {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .ace-box:hover {
+      transform: scale(1.02);
+    }
+    .ace-logo {
+      width: 90px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .ace-title {
+      font-size: 2rem;
+      color: #0d6b2f;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .ace-description {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* COMO SERÁ O CURSO? */
+    #curso .feature-card {
+      background-color: #1c1c1c;
+      border: 1px solid #0d6b2f;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+      min-height: 280px;
+    }
+    #curso .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.5);
+    }
+    #curso .feature-card h5 {
+      font-family: 'Staatliches', sans-serif;
+      color: #0d6b2f;
+      margin-bottom: 0.8rem;
+      font-size: 1.5rem;
+    }
+
+    /* NOVO BLOCO: INGLÊS TÁTICO */
+    .material-section {
+      background-color: #000; 
+      color: #fff;
+    }
+    .material-section h2.section-title {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: #0d6b2f;
+      text-align: left; /* Pode ajustar conforme desejar */
+    }
+    /* Ajuste em telas pequenas */
+    @media (max-width: 768px) {
+      .material-section img {
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 15px;
+      }
+    }
+
+    /* CARROSSEL DE DEPOIMENTOS (FUNDO BRANCO) */
+    .testimonials-section {
+      background-color: #fff;
+      color: #2c2c2c;
+    }
+    .testimonials-section h2 {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      color: #0d6b2f;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .testimonials-section p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #2c2c2c;
+    }
+    .testimonial-card {
+      background-color: #f9f9f9;
+      border: 1px solid #0d6b2f;
+      border-radius: 8px;
+      /* NOVO: altura fixa */
+      height: 220px; 
+      /* se quiser barra de rolagem caso o texto seja maior: */
+      overflow-y: auto;  
+
+      padding: 1.5rem;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      margin: 40px auto; /* Ajuste para centralizar */
+      max-width: 600px;  /* Largura máxima do card */
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+    }
+    .testimonial-card .author {
+      font-weight: bold;
+      color: #0d6b2f;
+      margin-top: 1rem;
+      display: block;
+    }
+    /* Ajuste das setas do carrossel para ficarem brancas */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(1) drop-shadow(1px 1px 2px #000);
+    }
+
+    /* FAQ */
+    .accordion-button {
+      background-color: #1c1c1c;
+      color: #fff;
+      font-family: 'Roboto', sans-serif; 
+      font-weight: 700;
+      letter-spacing: normal !important; 
+      transition: background-color 0.3s ease;
+    }
+    .accordion-button:focus {
+      box-shadow: none;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #0d6b2f;
+      color: #fff;
+    }
+    .accordion-body {
+      background-color: #1c1c1c;
+      color: #fff;
+    }
+
+    /* PROFESSORA */
+    .teacher-section {
+      background-color: #000;
+      padding: 60px 0;
+    }
+    .teacher-photo {
+      width: 100%;
+      max-width: 350px;
+      border: 2px solid #0d6b2f;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+    .teacher-text {
+      font-size: 1rem; 
+      line-height: 1.5; 
+      margin-bottom: 1rem;
+    }
+
+    /* PLANOS (FUNDO VERDE) */
+    .pricing-section {
+      background-color: #0d6b2f; 
+      color: #fff;             
+      padding: 60px 20px;
+    }
+    .pricing-title {
+      color: #fff; 
+    }
+    /* Bloco destaque em vermelho */
+    .bg-danger-promo {
+      background-color: #c90000; /* Ou outro tom de vermelho */
+    }
+
+    /* CONTATO (FUNDO BRANCO) */
+    .contact-section {
+      background-color: #fff; 
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
+      color: #2c2c2c; 
+    }
+    .contact-section h2 {
+      color: #0d6b2f;
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+    .contact-subtitle {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1rem;
+      color: #2c2c2c;
+      line-height: 1.5;
+    }
+    .contact-btn {
+      font-size: 1.2rem;
+      padding: 15px 30px;
+      background-color: #0d6b2f;
+      border: none;
+      color: #fff;
+      font-family: 'Staatliches', sans-serif;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .contact-btn:hover {
+      background-color: #0b5a28;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0d6b2f;
+      text-align: center;
+      padding: 20px;
+    }
+    footer p {
+      margin: 0;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero h2 {
+        font-size: 1.3rem;
+      }
+      .hero-bullets li {
+        display: block;
+        margin: 0.5rem 0;
+      }
+      .approval-box,
+      #curso .feature-card {
+        min-height: auto; 
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================
+       NAVBAR (TRANSPARENTE)
+  ======================= -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img 
+          src="./images/logo.png" 
+          alt="Logo da Teacher Natália Campos" 
+          loading="lazy" 
+          decoding="async"
+        />
+      </a>
+      <button 
+        class="navbar-toggler" 
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#approval">Aprovação</a></li>
+          <li class="nav-item"><a class="nav-link" href="#metodo-ace">Método ACE</a></li>
+          <li class="nav-item"><a class="nav-link" href="#curso">O Curso</a></li>
+          <li class="nav-item"><a class="nav-link" href="#material">Inglês Tático</a></li>
+          <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#professora">Professora</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planos">Planos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =======================
+       HERO
+  ======================= -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Turma Militar</h1>
+      <h2>Inglês para ESA, EsPCEX, AFA, EEAR, EPCAR, Colégio Naval, Escola Naval, EFOMM, PM, EAM, EsFCEx</h2>
+      <p style="color: #fffa;">
+        Início das aulas em <strong>15 de fevereiro</strong>. Garanta sua vaga com valor promocional até 
+        <strong>10 de fevereiro</strong> e conquiste resultados de excelência!
+      </p>
+      <ul class="hero-bullets">
+        <li><i class="fas fa-check"></i> 25 aulas ao vivo em grupo</li>
+        <li><i class="fas fa-check"></i> Apostila completa e exercícios</li>
+        <li><i class="fas fa-check"></i> Últimas 5 aulas de revisão e provas anteriores</li>
+        <li><i class="fas fa-check"></i> Pagamento via Pix, boleto ou cartão recorrente</li>
+      </ul>
+      <a 
+        href="https://wa.me/5512982611335"
+        class="btn btn-custom-green btn-lg"
+      >
+        Saiba Mais
+      </a>
+    </div>
+  </section>
+
+  <!-- =======================
+       A SUA APROVAÇÃO COMEÇA AGORA (FUNDO VERDE)
+  ======================= -->
+  <section class="approval-section" id="approval" data-aos="fade-up">
+    <h2>A Sua Aprovação Começa Agora</h2>
+    <div class="container approval-container">
+      <!-- Box 1 -->
+      <div class="approval-box">
+        <div class="approval-icon text-center">
+          <i class="fas fa-trophy"></i>
+        </div>
+        <h5>25 Aulas Estruturadas</h5>
+        <p>
+          Tenha acesso a 25 aulas ao vivo, cuidadosamente planejadas para cada etapa dos concursos.  
+          As últimas 5 são dedicadas à revisão e à resolução de provas anteriores.
+        </p>
+      </div>
+      <!-- Box 2 -->
+      <div class="approval-box">
+        <div class="approval-icon text-center">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h5>Preparação Completa</h5>
+        <p>
+          Cada aula é objetiva, com foco nos principais concursos:  
+          ESA, EsPCEX, AFA, EEAR, EPCAR, Colégio Naval, Escola Naval, EFOMM, PM, EAM, EsFCEx, Polícia Militar.
+        </p>
+      </div>
+      <!-- Box 3 -->
+      <div class="approval-box">
+        <div class="approval-icon text-center">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h5>Suporte e Material Completo</h5>
+        <p>
+          Receba apostilas, exercícios específicos e revisões extras para potencializar seu aprendizado. 
+          Suporte via grupo exclusivo, para você não ficar com nenhuma dúvida.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- =======================
+       COMO SERÁ O CURSO?
+  ======================= -->
+  <section id="curso">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">O Curso</h2>
+      <p class="section-subtitle">
+        Organização de aulas, material e revisões para sua aprovação nos principais concursos militares.
+      </p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h5><i class="fas fa-chalkboard"></i> Aulas Semanais</h5>
+            <p>
+              Acontecem todos os sábados, às 9h da manhã, com foco em leitura, interpretação e vocabulário.  
+              Ao todo, serão 25 encontros ao vivo.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h5><i class="fas fa-book-medical"></i> Material Didático</h5>
+            <p>
+              Apostila completa e listas de exercícios específicas para ESA, EsPCEX, AFA, EEAR, EPCAR,  
+              Colégio Naval, Escola Naval, EFOMM, PM, EAM, EsFCEx. 
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h5><i class="fas fa-headset"></i> Suporte Constante</h5>
+            <p>
+              Grupo exclusivo para sanar dúvidas, compartilhar dicas e garantir evolução contínua. 
+              Você terá todo o apoio necessário até a prova.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h5><i class="fas fa-tasks"></i> Exercícios Segmentados</h5>
+            <p>
+              Pratique com questões focadas em cada concurso, aumentando sua precisão em  
+              leitura e interpretação de textos em inglês.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h5><i class="fas fa-file-alt"></i> Simulados</h5>
+            <p>
+              Teste seus conhecimentos com simulados comentados e revisões pré-prova,  
+              entendendo exatamente como o inglês é cobrado.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h5><i class="fas fa-gift"></i> Revisão completa</h5>
+            <p>
+              Revisão intensiva e resolução de provas anteriores, consolidando todo o conteúdo 
+              e garantindo mais confiança no dia do exame.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================
+       INGLÊS TÁTICO (NOVO BLOCO)
+  ======================= -->
+  <section id="material" class="material-section py-5">
+    <div class="container" data-aos="fade-up">
+      <div class="row align-items-center">
+        <!-- Imagem -->
+        <div class="col-md-6 text-center mb-4 mb-md-0">
+          <img 
+            src="./images/apostila.png"
+            alt="Capa do material Inglês Tático - Método ACE"
+            class="img-fluid rounded shadow"
+            width="1000"
+            height="1000"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+        <!-- Texto -->
+        <div class="col-md-6">
+          <h2 class="section-title">
+            O material MAIS COMPLETO!
+          </h2>
+          <p class="mb-3">
+            O <strong>Inglês Tático</strong> é uma apostila completa que incorpora o Método ACE. 
+            Focada nos principais concursos militares, ela apresenta mais de <strong>400 exercícios</strong> 
+            e uma <strong>profunda explicação teórica</strong> de cada assunto.
+          </p>
+          <p class="mb-3">
+            Você vai encontrar <em>leituras direcionadas</em>, <em>exemplos práticos</em> e 
+            <em>toda a teoria gramatical</em> necessária para as provas de ESA, EsPCEX, AFA, EEAR, EPCAR, 
+            Colégio Naval, Escola Naval, EFOMM, PM, EAM e EsFCEx.
+          </p>
+          <p class="mb-3">
+            Essa combinação de teoria + prática torna o <strong>Inglês Tático</strong> 
+            um material essencial para quem deseja acelerar o aprendizado e garantir 
+            um desempenho sólido nos concursos militares.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+    <!-- =======================
+       MÉTODO ACE
+  ======================= -->
+  <section class="ace-section" id="metodo-ace">
+    <div class="container py-5" data-aos="fade-up">
+      <div class="ace-box mx-auto" style="max-width: 800px;">
+        <img 
+          src="./images/ace-logo.png"
+          alt="Logo Método ACE"
+          class="ace-logo"
+          onerror="this.style.display='none';"
+          loading="lazy"
+          decoding="async"
+        >
+        <h2 class="ace-title">Método ACE</h2>
+        <p class="ace-description">
+          Desenvolvido para garantir alto desempenho em concursos militares, o Método ACE (Analyze, Comprehend, Extract)
+          guia você na interpretação de textos em inglês de forma rápida e eficaz.
+        </p>
+        <div class="ace-items row mt-4">
+          <div class="col-md-4 text-center ace-item">
+            <i class="fas fa-search"></i>
+            <h5>Analyze</h5>
+            <p>Identifique estruturas-chave e vocabulário relevante para entender o tema.</p>
+          </div>
+          <div class="col-md-4 text-center ace-item">
+            <i class="fas fa-brain"></i>
+            <h5>Comprehend</h5>
+            <p>Interprete o contexto, correlacione ideias e aplique conhecimento militar específico.</p>
+          </div>
+          <div class="col-md-4 text-center ace-item">
+            <i class="fas fa-check-circle"></i>
+            <h5>Extract</h5>
+            <p>Extraia informações exatas e responda às questões de forma segura e rápida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================
+       DEPOIMENTOS (CARROSSEL)
+  ======================= -->
+  <section class="testimonials-section py-5" id="depoimentos">
+    <div class="container" data-aos="fade-up">
+      <h2>Depoimentos</h2>
+      <p>Confira o que os alunos dizem sobre as aulas da Teacher Natália.</p>
+      
+      <div id="testimonialsCarousel"
+           class="carousel slide"
+           data-bs-ride="carousel"
+           data-bs-interval="3000">
+        <div class="carousel-inner">
+          
+          <!-- Slide 1 (active) -->
+          <div class="carousel-item active">
+            <div class="testimonial-card">
+              <p>
+                “A professora Natália é espetacular, uma excelente observadora que agrega bastante vocabulário 
+                de forma bem natural durante a conversação.”
+              </p>
+              <span class="author">- Aymê M.</span>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Excelente teacher, explica super bem o conteúdo, atenciosa procura ajudar a todos com as dúvidas, good person.”
+              </p>
+              <span class="author">- Daniel F.</span>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Professora super divertida e atenciosa, rainha da gramática.”
+              </p>
+              <span class="author">- Clarice M. S.</span>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “As aulas com a professora Natália são maravilhosas! Ela explica super bem, as aulas são dinâmicas e divertidas! Super recomendo!”
+              </p>
+              <span class="author">- Thaisa R.</span>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Aula muito boa! Superou as expectativas!”
+              </p>
+              <span class="author">- Nanci</span>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Professora super gente boa e com um extenso vocabulário. Aula show, bem cadenciada e preparada. Parabéns. Aconselho.”
+              </p>
+              <span class="author">- Marcelo A.</span>
+            </div>
+          </div>
+
+          <!-- Slide 7 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Uma das melhores e mais completas aulas que eu tive!!!”
+              </p>
+              <span class="author">- Danielly N. F.</span>
+            </div>
+          </div>
+
+          <!-- Slide 8 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Explica muito bem, esclarece dúvidas tanto do material da aula quanto de outros conteúdos, 
+                além de indicar matérias para termos uma compreensão melhor do idioma.”
+              </p>
+              <span class="author">- Adélia G. C.</span>
+            </div>
+          </div>
+
+          <!-- Slide 9 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “A teacher Natália mostra muita segurança com a matéria. Muito prestativa e com muito conhecimento.”
+              </p>
+              <span class="author">- Marcos V.</span>
+            </div>
+          </div>
+
+          <!-- Slide 10 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Professora super bem disposta, alegre, fala super bem, bem humorada, aula leve e com muitos aprendizados.”
+              </p>
+              <span class="author">- Caroline B. B.</span>
+            </div>
+          </div>
+
+          <!-- Slide 11 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “I loved every second of the class!!! Wonderful teacher.”
+              </p>
+              <span class="author">- Viviane S. A.</span>
+            </div>
+          </div>
+
+          <!-- Slide 12 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Adoro as aulas com Nat. Ela é super atenciosa, explica muito bem o conteúdo e a gramática além de dar várias dicas. Super recomendo.”
+              </p>
+              <span class="author">- Graziela M.</span>
+            </div>
+          </div>
+
+          <!-- Slide 13 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Dynamic class, specific tips on grammar and conversation.”
+              </p>
+              <span class="author">- Renan C.</span>
+            </div>
+          </div>
+
+          <!-- Slide 14 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Ter aula com a Natália foi incrível, ela deixa os alunos super à vontade e pela primeira vez não tive vergonha de errar. 
+                Muito atenciosa nas explicações e em proporcionar o melhor aproveitamento possível da aula.”
+              </p>
+              <span class="author">- Mayrah C. V.</span>
+            </div>
+          </div>
+
+          <!-- Slide 15 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “Até o momento uma das melhores professoras de inglês que eu já tive! 
+                Excelente didática, agrega mais vocabulário e sua aula flui naturalmente!! Parabéns!!!”
+              </p>
+              <span class="author">- Marcia A. S.</span>
+            </div>
+          </div>
+
+          <!-- Slide 16 -->
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>
+                “I loved the class! It was very well explained and engaging, which made learning much easier. 
+                Congratulations on the excellent work!”
+              </p>
+              <span class="author">- Jordana V. F. C.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botões de Navegação (setas) -->
+        <button class="carousel-control-prev" 
+                type="button" 
+                data-bs-target="#testimonialsCarousel" 
+                data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" 
+                type="button" 
+                data-bs-target="#testimonialsCarousel" 
+                data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- =======================
+       PROFESSORA
+  ======================= -->
+  <section class="teacher-section" id="professora" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title">Conheça a Sua Professora</h2>
+      <p class="section-subtitle">
+        Quem está à frente da Turma Militar - Inglês para Concursos Militares
+      </p>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-4 text-center">
+          <img 
+            src="./images/teacher.jpg"
+            alt="Teacher Natália Campos"
+            class="teacher-photo"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+        <div class="col-md-6">
+          <div class="bg-dark p-4 rounded-3 mt-4 mt-md-0">
+            <h4 class="text-success mb-3">
+              <i class="fas fa-chalkboard-teacher"></i> Teacher Natália Campos
+            </h4>
+            <p class="teacher-text">
+              Com mais de 7 anos de experiência no ensino de língua inglesa, a professora Natália Campos é graduanda em Letras 
+              e também já atuou como desenvolvedora .NET, unindo seus conhecimentos em tecnologia e educação para as aulas.
+            </p>
+            <p class="teacher-text">
+              Por meio de um método prático e voltado a resultados, seus alunos desenvolvem habilidades de leitura 
+              e interpretação de textos em inglês para concursos militares, superando
+              os desafios mais exigentes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================
+       PLANOS (FUNDO VERDE)
+  ======================= -->
+  <section id="planos" class="pricing-section">
+    <div class="container" data-aos="fade-up">
+      
+      <!-- Card do Plano Mensal -->
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="card text-center bg-light border-0 shadow-lg">
+            <div class="card-body p-4">
+              <h3 class="card-title text-success text-uppercase fw-bold mb-4" 
+                  style="font-family: 'Staatliches', sans-serif;">
+                Promoção de Lançamento!
+              </h3>
+			                <div class="mb-3">
+                <span class="text-muted text-decoration-line-through fs-5 me-2">
+                  R$ 250
+                </span>
+                <span class="text-success fs-2 fw-bold">R$ 100</span>
+                <span class="ms-1 fs-5">/mês</span>
+              </div>
+              <ul class="list-unstyled text-start mx-auto" style="max-width: 320px;">
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i> Aulas semanais (sábado, 9h)
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i> Total de 25 aulas
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i> Revisões e resolução de provas
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i> Material didático e exercícios
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i> Suporte via grupo exclusivo
+                </li>
+                <li class="mb-2">
+                  <i class="fas fa-check text-success me-2"></i> Início em 15 de fevereiro
+                </li>
+				                <li class="mb-2">
+                   Promoção válida até 10 de fevereiro. Após essa data, o preço volta para R$ 250
+                </li>
+              </ul>
+              <a 
+                href="https://pay.hotmart.com/Q97613465M?off=d5kgyda6"
+                class="btn btn-success btn-lg mt-3"
+              >
+                Assinar Agora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+   <!-- =======================
+       FAQ
+  ======================= -->
+  <section id="faq" class="py-5">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-subtitle">
+        Tire suas dúvidas e inicie sua preparação com tranquilidade.
+      </p>
+      <div class="accordion" id="faqAccordion">
+        <!-- Pergunta 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse1"
+              aria-expanded="false"
+              aria-controls="faqCollapse1"
+            >
+              Quais concursos militares exigem inglês?
+            </button>
+          </h2>
+          <div 
+            id="faqCollapse1"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeading1"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              A maior parte dos concursos das Forças Armadas e algumas Polícias Militares 
+              podem cobrar questões de inglês. Nosso curso é focado em ESA, EsPCEX, AFA, 
+              EEAR, EPCAR, Colégio Naval, Escola Naval, EFOMM, PM, EAM e EsFCEx.
+            </div>
+          </div>
+        </div>
+        <!-- Pergunta 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading2">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse2"
+              aria-expanded="false"
+              aria-controls="faqCollapse2"
+            >
+              Como funcionam as aulas?
+            </button>
+          </h2>
+          <div 
+            id="faqCollapse2"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeading2"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              As aulas acontecem on-line, ao vivo e em grupo, sempre aos sábados às 9h da manhã, 
+              totalizando 25 encontros. É possível interagir, tirar dúvidas e receber 
+              orientações em tempo real.
+            </div>
+          </div>
+        </div>
+        <!-- (REMOVIDO: Pergunta sobre aulas gravadas) -->
+        <!-- Pergunta 3 (era 4) - Ajustamos a numeração -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeading3">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapse3"
+              aria-expanded="false"
+              aria-controls="faqCollapse3"
+            >
+              Qual a forma de pagamento?
+            </button>
+          </h2>
+          <div 
+            id="faqCollapse3"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeading3"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Aceitamos Pix, boleto e cartão recorrente. Com a promoção de lançamento, 
+              o valor mensal é R$ 100 até 10 de fevereiro. Após essa data, passa a R$ 250.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================
+       CONTATO (FUNDO BRANCO)
+  ======================= -->
+  <section id="contato" class="contact-section">
+    <div class="container" data-aos="fade-up">
+      <h2>Entre em Contato</h2>
+      <p class="contact-subtitle">
+        Ficou com alguma dúvida ou quer saber mais detalhes?  
+        Fale diretamente conosco via WhatsApp e vamos ajudá-lo a conquistar sua vaga militar!
+      </p>
+      <a
+        href="https://wa.me/5512982611335?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20a%20Turma%20Militar%20-%20Ingl%C3%AAs%20para%20Concursos%21"
+        class="contact-btn"
+      >
+        <i class="fab fa-whatsapp"></i> Fale Conosco Agora
+      </a>
+    </div>
+  </section>
+
+  <!-- =======================
+       FOOTER
+  ======================= -->
+  <footer>
+    <div class="container">
+      <p class="m-0">
+        &copy; 2025 Teacher Natália Campos. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- =======================
+       SCRIPTS
+  ======================= -->
+  <!-- Bootstrap Bundle -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- AOS -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js">
+  </script>
+  <!-- Typed.js (opcional) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/dist/typed.min.js">
+  </script>
+  <script>
+    // AOS init
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+
+    // (Opcional) Texto digitado no Hero
+    // var typed = new Typed('#typed', {
+    //   strings: [
+    //     "Prepare-se para ESA, EsPCEX, AFA, EEAR, EPCAR...",
+    //     "25 Aulas, Revisões e Exercícios",
+    //     "Seu Inglês Militar em Outro Nível"
+    //   ],
+    //   typeSpeed: 40,
+    //   backSpeed: 30,
+    //   backDelay: 2000,
+    //   loop: true
+    // });
+  </script>
+</body>
+</html>
